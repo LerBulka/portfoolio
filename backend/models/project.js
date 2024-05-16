@@ -17,6 +17,8 @@ Project.init(
         image_name:{type:DataTypes.STRING},
         category_id:{type:DataTypes.INTEGER},
         subcategory_id:{type:DataTypes.INTEGER},
+        project_url:{type:DataTypes.STRING},
+        github_url:{type:DataTypes.STRING},
     },
     {
         sequelize:db,

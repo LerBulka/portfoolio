@@ -24,3 +24,23 @@ export const getAllImages = async(req, res) => {
         res.json({message:error.message});
     }
 };
+
+export const createImage = async (req, res) => {
+    try {
+        await Image.create(req.body);
+        res.json({message: 'Images Added'});
+    }catch (error) {
+        res.json({message:error.message});
+    }
+};
+
+export const deleteImage = async (req, res) => {
+    try {
+        await Image.destroy({
+            where: {project_id:req.params.id},
+        });
+        res.json({message: 'Image Deleted'});
+    }catch (error) {
+        res.json({message:error.message});
+    }
+};
